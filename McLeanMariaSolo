@@ -1,0 +1,126 @@
+
+package motorph;
+
+import java.util.Scanner;
+
+
+public class MotorPH {
+
+   
+    public static void main(String[] args) {
+       
+       
+        Scanner input = new Scanner(System.in);
+        
+        Long employeenumber;
+        String name;
+        String lastname;
+        String address;
+        String phonenumber;
+        String sssnumber;
+        String philhealthnumber;
+        String tinnumber;
+        String pagibignumber;
+        String status;
+        String position;
+        String immediatesupervisor;        
+        double ricesubsidy = 1500, phoneallowance = 2000, clothingallowance = 1000, totalallowance;
+        double basicsalarymonthly;
+        double basicsalarysemimonthlyrate;
+        double hourlyrate;
+        //double taxratepercentage;
+        double grosspay;
+        double workedhours;
+        double workedpaytotal;        
+        double pagibig = 100, philhealth = 200, sss = 250, tax, netpay, totaldeduction;        
+        
+        System.out.print("Enter Employee Number:" );
+        employeenumber = input.nextLong();
+        
+        System.out.print("Enter Name" );
+        name = input.nextLine();
+        
+        System.out.print(" Last Name:"  );
+        lastname = input.nextLine();
+        
+        System.out.println("Enter Full Address:" );
+        address = input.nextLine();
+        
+        System.out.println("Enter Phone Number:" );
+        phonenumber = input.nextLine();
+        
+        System.out.println("Enter SSS Number:" );
+        sssnumber = input.nextLine();
+        
+        System.out.println("Enter Philhealth Number:" );
+        philhealthnumber = input.nextLine();
+        
+        System.out.println("Enter TIN Number:" );
+        tinnumber = input.nextLine();
+        
+        System.out.println("Enter Pagibig Number:" );
+        pagibignumber = input.nextLine();
+        
+        System.out.println("Enter Status:" );
+        status = input.nextLine();
+        
+        System.out.println("Enter Position:" );
+        position = input.nextLine();
+        
+        System.out.println("Enter Immediate Supervisor:" );
+        immediatesupervisor = input.nextLine();    
+           
+        
+        totalallowance = (ricesubsidy + phoneallowance + clothingallowance); 
+        System.out.println("================Total Allowance================");
+        System.out.printf("Rice, Clothing, Phone: %.2f ", totalallowance);
+        System.out.println();
+        //System.out.printf("Net Pay: %.2f", netpay);
+        System.out.println("===============================================");
+        
+        
+        System.out.println("Enter Basic Salary Monthly :" );
+        basicsalarymonthly = input.nextDouble();
+        
+        System.out.println("Enter Basic Salary Semi Monthly Rate:" );
+        basicsalarysemimonthlyrate = input.nextDouble();
+  
+        System.out.println("Enter Worked Hours:" );
+        workedhours = input.nextDouble();
+        
+        System.out.println("Enter Hourly Rate:" );
+        hourlyrate = input.nextDouble();
+  
+        grosspay = (workedhours * hourlyrate);
+        System.out.println();
+        System.out.println("Grosspay : " + grosspay);
+        System.out.println("==============================");
+        System.out.println();
+                        
+        
+        System.out.println("===========Deduction===========");
+        tax = grosspay * 0.35%.2f;
+        totaldeduction  = (pagibig + philhealth + sss + tax);
+        
+        System.out.println("Tax:" + tax);             
+        System.out.println("SSS:" + sss);
+        System.out.println("Philhealth:" + philhealth);
+        System.out.println("Pagibig:" + pagibig);
+        System.out.println("Total Deduction: " + totaldeduction);
+        System.out.println("==============================");
+        System.out.println();
+        
+        netpay = (grosspay - totaldeduction);
+        System.out.printf("Net Pay: %.2f", netpay);
+        System.out.println();
+        System.out.println("=============================="); 
+        
+        netpay = (netpay + totalallowance);
+        System.out.printf("Net Pay + Allowances: %.2f", netpay);
+        System.out.println();
+        System.out.println("==============================");
+        
+
+    }
+    
+}
